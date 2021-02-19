@@ -1,0 +1,50 @@
+h1,h2{
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+h2{
+    color:grey;
+}
+
+#menus{
+    display:flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+.menu{
+    margin:0 50px;
+}
+
+.menu select{
+    width: 200px;
+}
+
+#liste{
+    width: 80%;
+    padding:15px;
+    margin: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  
+  .nodata{
+      margin: 20px;
+      text-align: center;
+      font-size: 20px;
+  }

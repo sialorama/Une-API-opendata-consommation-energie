@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    h1{
+        padding-top: 45px;
+    }
+    #graph{
+        padding-left: 25%;
+    }
+    </style>
+
+<h1>Consommation de gaz et d'électricité<br> par département et/ou filière<br>pour l'année 2019</h1>
+
+<div id="menus">
+    <form method="post">
+        <div class="menu">
+            <p>Selectionnez un departement:</p>
+            <select id="departement" name="departement", class="departement", required>
+                <option></option>
+                {% for code_dept in range(1,99) %}
+                <option>{{ code_dept }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    
+        <div class="menu">
+            <p>selectionner filiere:</p>
+            <select id="filiere" name="filiere", class="filiere">
+                <option></option>
+                <option value="Electricité">Electricité</option>
+                <option value="Gaz">Gaz</option>
+            </select>
+        </div>
+
+        <fieldset>
+            <input name="btn_submit" type="submit" value="Afficher"  id="btn_submit" class="button"/>
+        </fieldset>
+    </form>
+</div>
+
+{% if consofiliere_dept|length >1 %}
+
+
+<h1>consommations d'énergie pour le département {{consofiliere_dept[0][0]["_id"][0]}}  pour l'année 2019</h1>
+<div id="graph">
+<div style="width: 65%">
+    <canvas id="myChart"></canvas>
+</div>
+
+{{consofiliere_dept}}
+
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'bar',
+
+        // The data for our dataset
+        data: {
+        labels: ['Electricité', 'Gaz'],
+        datasets: [{
+        label: "Consommation par filière pour toutes les régions pour l'année 2019",
+        backgroundColor: ['rgba(75, 192, 192, 0.2)','rgba(255, 159, 64, 0.2)'],
+        borderColor: 'rgb(255, 99, 132)',
+        data: [{{consofiliere_dept[0][0]["total"]}}, {{consofiliere_dept[1][0]["total"]}}]
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    }
+}
+    });
+</script>
+
+
+
+
+
+
+
+{% endif %}
+
+{% endblock %}

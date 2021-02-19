@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body {
+background-image: url('static/bg.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+padding-top: 15%;
+padding-left: 25%;
+
+    }
+    label{
+        font-size: 20px;
+    }
+</style>
+</head>
+<body>
+    <h1>Formulaire de suppresion de documents</h1><br><br>
+    <form method="POST" action="http://127.0.0.1:5000/suppression">
+        <label>Entrez l'id du document à supprimer :</label><br><br>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">id</span>
+                <input type="text" class="form-control"  name="id" aria-label="Username" aria-describedby="addon-wrapping"  value="" required>
+                <button type="submit" class="btn btn-danger" type="button" id="button-addon2">SUPPRIMER</button>
+            </div>
+    </form>
+
+
+</body>
+</html>

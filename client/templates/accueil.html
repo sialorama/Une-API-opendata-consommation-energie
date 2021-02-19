@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    h1{
+        
+        text-align: center;
+        color: cadetblue;    
+        }
+    ul{
+      padding-left: 25%;
+      font-size: 30px;
+    }
+</style>
+
+<div id="page">
+  <img class="fit-picture"
+    src="static/logo.jpg"
+    alt="log_isen">
+
+<h1>La consommation nationnal d'énergie pour l'année 2019</h1>
+<h1>Projet réalisé par Céline, Christelle et Jamal</h1>
+<h1>Isen Simplon Microsoft</h1>
+
+<ul>
+  <li><a href="http://localhost:5000/filiere/Gaz">Les données pour une filière (soit gaz, soit électricité),</a></li>
+  <li><a href="http://localhost:5000/region/1">Les données pour une région</a></li>
+  <li><a href="http://localhost:5000/filiereregion/Electricité/1">Les données pour une filière et une région</a></li>
+  <li><a href="http://localhost:5000/consofiliere/Electricité">La consommation pour une filière</a></li>
+  <li><a href="http://localhost:5000/consofiliere_dept/Gaz/11">La consommation d'une filière pour un département</a></li>
+  <li><a href="http://127.0.0.1:5000/suppression_choix">Supprimer un document</a></li>
+</ul> 
+</div>
+
+{% endblock %}

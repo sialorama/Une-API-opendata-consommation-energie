@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Consommation pour l'année 2019 en gaz et en electricite par région et/ou filiere</h1>
+
+<div id="menus">
+    <div class="menu">
+        <p>select region:</p>
+        <select id="region">
+            <option></option>
+            {% for dep in range(1,99) %}
+            <option>{{ dep }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    
+    <div class="menu">
+        <p>select secteur:</p>
+        <select id="secteur">
+            <option></option>
+            <option value="Electricité">Electricité</option>
+            <option value="Gaz">Gaz</option>
+        </select>
+    </div>
+
+    <fieldset>
+        <button onclick="changerPage()" class="btn btn-primary btn-block form-button" id="tous">Afficher Liste</button>
+    </fieldset>
+
+</div>
+
+<h2>Par region: {{region[0]['fields']["libelle_region"]}}</h2>
+<div id="liste">
+    <table>
+        <tr>
+            <th>Filiere</thd>
+            <th>Consommation</th>
+        </tr>
+
+        {% for entree in region %}
+        <tr>
+            <td>{{entree["fields"]["filiere"]}}</td>
+            <td>{{entree["fields"]["conso"]}}</td>
+        </tr>
+        {% endfor%}
+</div>
+
+{% endblock %}
