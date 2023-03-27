@@ -4,10 +4,13 @@ Les données sur la consommation d'énergie en France à travers l'utilisation d
 
 ## Test de l'API avec Postman:  
 
-![image.png](./Test_api_Postman_Get.png)  
+![image.png](./imgs/Test_api_Postman_Get.png)  
 
-![image.png](./Test_api_Postman_Get_2.png)  
+![image.png](./imgs/Test_api_Postman_Get_2.png)  
 
-![image.png](./Test_api_Postman_delete.png)  
+![image.png](./imgs/Test_api_Postman_delete.png)  
 
+## Organisation du projet:  
+
+![image.png](./imgs/Organisation_Agile_Trello.png)  
 
